@@ -17,7 +17,7 @@ import time
 from newsapi import NewsApiClient #for reading news articles from newsAPI
 from datetime import timedelta
 from email.message import EmailMessage
-from config import SENDER_EMAIL,EMAIL_PASSSWORD
+from config import SENDER_EMAIL,EMAIL_PASSSWORD,WEATHER_API_KEY
 import threading  # for running alarm/reminder in thread with other work
 
 # Setting speak function properties
@@ -419,7 +419,7 @@ def weather_update(query):
     print(query1)
     if query1=="":
         query1=current_location("city")
-    api_key="ac5b0a4fe6ef0f31e02b00b42f0269eb"#my api_key for weather map api
+    api_key=WEATHER_API_KEY#my api_key for weather map api
     url="https://api.openweathermap.org/data/2.5/weather"
     parameters={
         'units':'metric',
